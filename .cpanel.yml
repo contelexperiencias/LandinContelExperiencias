@@ -1,5 +1,10 @@
 deployment:
-tasks:
-- export DEPLOYPATH=/home/contelexp/public_html/
-- /bin/cp Post1.html $DEPLOYPATH
-- /bin/cp -r * $DEPLOYPATH
+      tasks:
+        - export DEPLOYPATH=/home/contelexp/public_html  # Add /<app_folder> if required
+        - /bin/cp Post1.html $DEPLOYPATH                 #Copy specific file to destination from root
+        
+        - /bin cp * $DEPLOYPATH                           #copy all from root 
+      
+        - /bin/cp -r * $DEPLOYPATH                        #copy all recursively to $DEPLOYPATH
+        
+
